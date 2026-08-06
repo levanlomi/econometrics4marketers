@@ -1,0 +1,33 @@
+{
+  "name": "econometrics",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "update-regressors": "node scripts/update-regressors.mjs",
+    "verify:wooldridge": "npx tsx scripts/verify_wooldridge.ts"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "date-fns": "^4.4.0",
+    "papaparse": "^5.5.4",
+    "react": "^19.2.8",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.8",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0"
+  }
+}

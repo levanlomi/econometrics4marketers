@@ -1,0 +1,1244 @@
+{
+  "setup": {
+    "file": "MMM_Test_Dataset_260weeks.xlsx",
+    "granularity": "week",
+    "from": "2021-01-04",
+    "to": "2025-12-22",
+    "nRows": 260,
+    "importWarnings": [],
+    "skippedSynthetic": [
+      "holiday",
+      "trend",
+      "seasonality"
+    ],
+    "external": [
+      "price_index"
+    ],
+    "media": [
+      "tv_spend",
+      "radio_spend",
+      "direct_spend",
+      "ooh_spend",
+      "brand_search",
+      "nonbrand_search"
+    ],
+    "note": "Пайплайн как в приложении: рекомендуемые РФ-факторы, week, автотрансформы каналов, итеративный VIF-prune."
+  },
+  "cleaned": {
+    "dropped": [
+      "channel_radio_spend",
+      "channel_tv_spend"
+    ],
+    "transformNotes": [
+      "Автотрансформации проверены, но отключены: не улучшили holdout или ухудшили базу."
+    ],
+    "fit": {
+      "r2": 0.8281,
+      "adjR2": 0.8183,
+      "intercept": 54662.7,
+      "k": 14,
+      "n": 260,
+      "inSampleMape": 3,
+      "warnings": [
+        "Проверка на отложенной выборке (208/52): R²=-3102.13, sMAPE=135.0%."
+      ],
+      "validation": {
+        "trainN": 208,
+        "testN": 52,
+        "r2Test": -3102.13,
+        "smapeTest": 135,
+        "mapeTest": 439.5
+      }
+    },
+    "lite": {
+      "trust": "green",
+      "trustText": "Модели в целом можно доверять: данных достаточно, факторы не сильно дублируют друг друга, объяснение динамики приемлемое.",
+      "accuracyPct": 81.8,
+      "hasCollinearity": false,
+      "influencing": [
+        {
+          "label": "Сезонность (sin)",
+          "verdict": "up",
+          "sharePct": 41.2
+        },
+        {
+          "label": "brand_search",
+          "verdict": "up",
+          "sharePct": 21.9
+        },
+        {
+          "label": "Ключевая ставка ЦБ",
+          "verdict": "up",
+          "sharePct": 10.6
+        },
+        {
+          "label": "Выходной",
+          "verdict": "down",
+          "sharePct": 4.8
+        },
+        {
+          "label": "Школьные каникулы",
+          "verdict": "up",
+          "sharePct": 4.2
+        },
+        {
+          "label": "price_index",
+          "verdict": "down",
+          "sharePct": 3.3
+        }
+      ],
+      "notInfluencing": [
+        {
+          "label": "ooh_spend",
+          "sharePct": 5.3
+        },
+        {
+          "label": "Сезонность (cos)",
+          "sharePct": 2
+        },
+        {
+          "label": "Зарплатные дни",
+          "sharePct": 1.7
+        },
+        {
+          "label": "Крупные распродажи",
+          "sharePct": 1.3
+        },
+        {
+          "label": "direct_spend",
+          "sharePct": 1.2
+        },
+        {
+          "label": "Курс USD/RUB",
+          "sharePct": 1
+        },
+        {
+          "label": "Праздник РФ",
+          "sharePct": 0.8
+        },
+        {
+          "label": "nonbrand_search",
+          "sharePct": 0.6
+        }
+      ]
+    },
+    "decomp": {
+      "baselineShare": 82.6,
+      "incrementalShare": 17.4,
+      "clampedBaselinePoints": 0,
+      "dates": [
+        "Нед. 1 2021",
+        "Нед. 5 2021",
+        "Нед. 9 2021",
+        "Нед. 13 2021",
+        "Нед. 17 2021",
+        "Нед. 21 2021",
+        "Нед. 25 2021",
+        "Нед. 29 2021",
+        "Нед. 33 2021",
+        "Нед. 37 2021",
+        "Нед. 41 2021",
+        "Нед. 45 2021",
+        "Нед. 49 2021",
+        "Нед. 1 2022",
+        "Нед. 5 2022",
+        "Нед. 9 2022",
+        "Нед. 13 2022",
+        "Нед. 17 2022",
+        "Нед. 21 2022",
+        "Нед. 25 2022",
+        "Нед. 29 2022",
+        "Нед. 33 2022",
+        "Нед. 37 2022",
+        "Нед. 41 2022",
+        "Нед. 45 2022",
+        "Нед. 49 2022",
+        "Нед. 1 2023",
+        "Нед. 5 2023",
+        "Нед. 9 2023",
+        "Нед. 13 2023",
+        "Нед. 17 2023",
+        "Нед. 21 2023",
+        "Нед. 25 2023",
+        "Нед. 29 2023",
+        "Нед. 33 2023",
+        "Нед. 37 2023",
+        "Нед. 41 2023",
+        "Нед. 45 2023",
+        "Нед. 49 2023",
+        "Нед. 1 2024",
+        "Нед. 5 2024",
+        "Нед. 9 2024",
+        "Нед. 13 2024",
+        "Нед. 17 2024",
+        "Нед. 21 2024",
+        "Нед. 25 2024",
+        "Нед. 29 2024",
+        "Нед. 33 2024",
+        "Нед. 37 2024",
+        "Нед. 41 2024",
+        "Нед. 45 2024",
+        "Нед. 49 2024",
+        "Нед. 1 2024",
+        "Нед. 5 2025",
+        "Нед. 9 2025",
+        "Нед. 13 2025",
+        "Нед. 17 2025",
+        "Нед. 21 2025",
+        "Нед. 25 2025",
+        "Нед. 29 2025",
+        "Нед. 33 2025",
+        "Нед. 37 2025",
+        "Нед. 41 2025",
+        "Нед. 45 2025",
+        "Нед. 49 2025",
+        "Нед. 52 2025"
+      ],
+      "actual": [
+        47678,
+        49529,
+        46110,
+        45438,
+        50622,
+        52374,
+        47699,
+        45927,
+        40526,
+        45329,
+        36947,
+        37439,
+        42115,
+        50534,
+        49622,
+        43895,
+        52044,
+        49881,
+        50722,
+        43599,
+        43390,
+        44451,
+        42377,
+        40311,
+        43462,
+        43636,
+        48690,
+        45875,
+        49230,
+        53501,
+        49194,
+        50269,
+        46581,
+        48887,
+        43059,
+        35459,
+        42120,
+        42836,
+        44038,
+        48047,
+        51065,
+        50817,
+        48122,
+        52169,
+        48869,
+        49667,
+        43914,
+        41551,
+        42017,
+        43361,
+        43790,
+        43227,
+        50386,
+        51788,
+        52366,
+        52264,
+        50423,
+        56133,
+        49508,
+        45951,
+        44284,
+        42388,
+        42446,
+        40831,
+        45513,
+        53431
+      ],
+      "fitted": [
+        46702.2,
+        49358.7,
+        49225.1,
+        49001.4,
+        50066.2,
+        50970.3,
+        47294.2,
+        42159.5,
+        42452.5,
+        42309,
+        40882.1,
+        40331.1,
+        43982.6,
+        48973.3,
+        48028.5,
+        49952.8,
+        53061.4,
+        53096.6,
+        49753.8,
+        46358,
+        44676.6,
+        44870.5,
+        40792.8,
+        39281.2,
+        42528.3,
+        45765.8,
+        46661.3,
+        45984.2,
+        49944.9,
+        53639.3,
+        50414.5,
+        47623.8,
+        47843.4,
+        46792,
+        42971.2,
+        39822.5,
+        41397,
+        45122,
+        44762.3,
+        46409.9,
+        49626.1,
+        53070.5,
+        52224.3,
+        49549.7,
+        50687.7,
+        50918.3,
+        45441.8,
+        41982.6,
+        43014.2,
+        44008.5,
+        43936,
+        43588.5,
+        49114.2,
+        51379.7,
+        50822.9,
+        51433.2,
+        52370,
+        52692.1,
+        49390.2,
+        45168,
+        44710.4,
+        44410.2,
+        41861.1,
+        41926.7,
+        45356.1,
+        53431
+      ],
+      "baseline": [
+        38021.1,
+        39273.5,
+        41125.9,
+        42259.2,
+        41558.5,
+        40448.7,
+        39004.9,
+        36433.4,
+        34586,
+        32972,
+        33175.4,
+        34674.4,
+        36019,
+        38592.9,
+        39850.8,
+        43182.1,
+        44479.7,
+        42887.1,
+        41397.6,
+        39720.3,
+        37142.3,
+        34941.3,
+        33185.8,
+        33326.7,
+        34698.6,
+        36073.4,
+        38449.8,
+        39736,
+        41561.9,
+        42873.7,
+        42052.5,
+        40784.7,
+        39265.4,
+        36844.1,
+        35321.6,
+        33746.5,
+        33852.6,
+        35451.7,
+        36921.3,
+        39497.3,
+        40742.3,
+        42564.4,
+        43961.9,
+        43144.5,
+        41942.5,
+        40549.2,
+        38068.6,
+        36326.6,
+        34686,
+        34701.9,
+        36477.1,
+        37649.1,
+        40156.8,
+        41265.4,
+        42720.6,
+        44672.9,
+        43904.6,
+        42729.4,
+        41244.8,
+        38773.9,
+        36448.2,
+        34476.9,
+        34506.9,
+        36058.7,
+        37171.1,
+        43848.3
+      ],
+      "channelTotals": {
+        "channel_direct_spend": -139397,
+        "channel_ooh_spend": 104702,
+        "channel_brand_search": 1793268,
+        "channel_nonbrand_search": 348873
+      }
+    },
+    "channelPerf": [
+      {
+        "id": "channel_brand_search",
+        "label": "brand_search",
+        "beta": 0.629312,
+        "p": 0,
+        "significant": true,
+        "sharePct": 21.9,
+        "vif": 1.03,
+        "stdBeta": 0.387,
+        "totalLift": 1793268,
+        "meanWeeklyLift": 6897.2,
+        "totalSpend": 2849569,
+        "salesPer1kSpend": 629.3119
+      },
+      {
+        "id": "channel_ooh_spend",
+        "label": "ooh_spend",
+        "beta": 0.010068,
+        "p": 0.1533,
+        "significant": false,
+        "sharePct": 5.3,
+        "vif": 6.1,
+        "stdBeta": 0.094,
+        "totalLift": 104702,
+        "meanWeeklyLift": 402.7,
+        "totalSpend": 10400000,
+        "salesPer1kSpend": 10.0675
+      },
+      {
+        "id": "channel_direct_spend",
+        "label": "direct_spend",
+        "beta": -0.004127,
+        "p": 0.4419,
+        "significant": false,
+        "sharePct": 1.2,
+        "vif": 1.05,
+        "stdBeta": -0.021,
+        "totalLift": -139397,
+        "meanWeeklyLift": -536.1,
+        "totalSpend": 33776179,
+        "salesPer1kSpend": -4.1271
+      },
+      {
+        "id": "channel_nonbrand_search",
+        "label": "nonbrand_search",
+        "beta": 0.111421,
+        "p": 0.7235,
+        "significant": false,
+        "sharePct": 0.6,
+        "vif": 1.09,
+        "stdBeta": 0.01,
+        "totalLift": 348873,
+        "meanWeeklyLift": 1341.8,
+        "totalSpend": 3131113,
+        "salesPer1kSpend": 111.4214
+      }
+    ],
+    "baseFactors": [
+      {
+        "id": "month_sin",
+        "label": "Сезонность (sin)",
+        "beta": 4417.3624,
+        "p": 0,
+        "significant": true,
+        "sharePct": 41.2,
+        "vif": 5.91,
+        "stdBeta": 0.726
+      },
+      {
+        "id": "key_rate",
+        "label": "Ключевая ставка ЦБ",
+        "beta": 141.7653,
+        "p": 0,
+        "significant": true,
+        "sharePct": 10.6,
+        "vif": 1.79,
+        "stdBeta": 0.187
+      },
+      {
+        "id": "is_weekend",
+        "label": "Выходной",
+        "beta": -20618.7787,
+        "p": 0.0019,
+        "significant": true,
+        "sharePct": 4.8,
+        "vif": 1.04,
+        "stdBeta": -0.085
+      },
+      {
+        "id": "school_holiday",
+        "label": "Школьные каникулы",
+        "beta": 712.6487,
+        "p": 0.0359,
+        "significant": true,
+        "sharePct": 4.2,
+        "vif": 1.75,
+        "stdBeta": 0.074
+      },
+      {
+        "id": "channel_price_index",
+        "label": "price_index",
+        "beta": -11813.566,
+        "p": 0.0374,
+        "significant": true,
+        "sharePct": 3.3,
+        "vif": 1.12,
+        "stdBeta": -0.059
+      },
+      {
+        "id": "month_cos",
+        "label": "Сезонность (cos)",
+        "beta": -215.743,
+        "p": 0.3156,
+        "significant": false,
+        "sharePct": 2,
+        "vif": 1.77,
+        "stdBeta": -0.035
+      },
+      {
+        "id": "salary_days",
+        "label": "Зарплатные дни",
+        "beta": 326.8079,
+        "p": 0.2659,
+        "significant": false,
+        "sharePct": 1.7,
+        "vif": 1.06,
+        "stdBeta": 0.03
+      },
+      {
+        "id": "major_sale",
+        "label": "Крупные распродажи",
+        "beta": 290.5738,
+        "p": 0.463,
+        "significant": false,
+        "sharePct": 1.3,
+        "vif": 1.47,
+        "stdBeta": 0.024
+      },
+      {
+        "id": "usd_rub",
+        "label": "Курс USD/RUB",
+        "beta": -6.6953,
+        "p": 0.6067,
+        "significant": false,
+        "sharePct": 1,
+        "vif": 1.82,
+        "stdBeta": -0.018
+      },
+      {
+        "id": "is_holiday",
+        "label": "Праздник РФ",
+        "beta": -157.5179,
+        "p": 0.6514,
+        "significant": false,
+        "sharePct": 0.8,
+        "vif": 1.34,
+        "stdBeta": -0.014
+      }
+    ],
+    "enabled": [
+      "usd_rub",
+      "key_rate",
+      "is_holiday",
+      "is_weekend",
+      "salary_days",
+      "school_holiday",
+      "major_sale",
+      "month_sin",
+      "month_cos",
+      "channel_direct_spend",
+      "channel_ooh_spend",
+      "channel_brand_search",
+      "channel_nonbrand_search",
+      "channel_price_index"
+    ]
+  },
+  "correlations": {
+    "vsSales": [
+      {
+        "channel": "tv_spend",
+        "corrSales": 0.358
+      },
+      {
+        "channel": "radio_spend",
+        "corrSales": 0.367
+      },
+      {
+        "channel": "direct_spend",
+        "corrSales": -0.045
+      },
+      {
+        "channel": "ooh_spend",
+        "corrSales": 0.737
+      },
+      {
+        "channel": "brand_search",
+        "corrSales": 0.38
+      },
+      {
+        "channel": "nonbrand_search",
+        "corrSales": 0.053
+      }
+    ],
+    "betweenChannels": [
+      {
+        "a": "tv_spend",
+        "b": "radio_spend",
+        "r": 0.984
+      },
+      {
+        "a": "tv_spend",
+        "b": "brand_search",
+        "r": 0.935
+      },
+      {
+        "a": "radio_spend",
+        "b": "brand_search",
+        "r": 0.923
+      },
+      {
+        "a": "ooh_spend",
+        "b": "nonbrand_search",
+        "r": 0.123
+      },
+      {
+        "a": "radio_spend",
+        "b": "ooh_spend",
+        "r": 0.035
+      },
+      {
+        "a": "tv_spend",
+        "b": "ooh_spend",
+        "r": 0.03
+      },
+      {
+        "a": "ooh_spend",
+        "b": "brand_search",
+        "r": 0.03
+      },
+      {
+        "a": "direct_spend",
+        "b": "ooh_spend",
+        "r": 0.012
+      }
+    ]
+  },
+  "vsExpected": {
+    "r2": {
+      "target": ">0.85",
+      "actual": 0.8281,
+      "pass": false
+    },
+    "mape": {
+      "target": "8-12%",
+      "actual": 439.5,
+      "pass": false
+    },
+    "baseShare": {
+      "target": "58-62%",
+      "actual": 82.6,
+      "pass": false
+    },
+    "increment": {
+      "target": "38-42%",
+      "actual": 17.4,
+      "pass": false
+    }
+  },
+  "coefCompare": [
+    {
+      "groundTruth": "TV coef",
+      "gtBeta": 0.00018,
+      "estimated": null,
+      "inModel": false,
+      "significant": false,
+      "label": null
+    },
+    {
+      "groundTruth": "Radio coef",
+      "gtBeta": 0.0002,
+      "estimated": null,
+      "inModel": false,
+      "significant": false,
+      "label": null
+    },
+    {
+      "groundTruth": "Direct coef",
+      "gtBeta": 0.00025,
+      "estimated": -0.004127,
+      "inModel": true,
+      "significant": false,
+      "label": "direct_spend"
+    },
+    {
+      "groundTruth": "Brand search coef",
+      "gtBeta": 0.6,
+      "estimated": 0.629312,
+      "inModel": true,
+      "significant": true,
+      "label": "brand_search"
+    },
+    {
+      "groundTruth": "Nonbrand coef",
+      "gtBeta": 0.25,
+      "estimated": 0.111421,
+      "inModel": true,
+      "significant": false,
+      "label": "nonbrand_search"
+    },
+    {
+      "groundTruth": "Price penalty",
+      "gtBeta": -9000,
+      "estimated": -11813.565964,
+      "inModel": true,
+      "significant": true,
+      "label": "price_index"
+    }
+  ],
+  "groundTruth": {
+    "TV coef": 0.00018,
+    "Direct coef": 0.00025,
+    "Radio coef": 0.0002,
+    "Brand search coef": 0.6,
+    "Nonbrand coef": 0.25,
+    "Price penalty": -9000
+  },
+  "fileNative": {
+    "note": "Колонки файла (holiday/trend/seasonality/price) как external + лёгкие РФ-факторы; VIF-prune.",
+    "dropped": [
+      "channel_radio_spend"
+    ],
+    "fit": {
+      "r2": 0.867,
+      "adjR2": 0.86,
+      "k": 13,
+      "n": 260,
+      "inSampleMape": 2.7,
+      "validation": {
+        "trainN": 208,
+        "testN": 52,
+        "r2Test": 0.869,
+        "smapeTest": 2.7,
+        "mapeTest": 2.7
+      }
+    },
+    "lite": {
+      "trust": "green",
+      "accuracyPct": 86,
+      "influencing": [
+        {
+          "label": "seasonality",
+          "verdict": "up",
+          "sharePct": 47.1
+        },
+        {
+          "label": "brand_search",
+          "verdict": "up",
+          "sharePct": 23
+        },
+        {
+          "label": "trend",
+          "verdict": "up",
+          "sharePct": 11.5
+        },
+        {
+          "label": "holiday",
+          "verdict": "up",
+          "sharePct": 11.3
+        }
+      ]
+    },
+    "shares": {
+      "base": 82.1,
+      "inc": 17.9
+    },
+    "channelPerf": [
+      {
+        "id": "channel_brand_search",
+        "label": "brand_search",
+        "beta": 0.67636,
+        "p": 0,
+        "significant": true,
+        "sharePct": 23,
+        "vif": 8.07,
+        "totalLift": 1927333,
+        "salesPer1kSpend": 676.3596,
+        "gt": 0.6
+      },
+      {
+        "id": "channel_tv_spend",
+        "label": "tv_spend",
+        "beta": -0.000766,
+        "p": 0.6597,
+        "significant": false,
+        "sharePct": 1.6,
+        "vif": 8.02,
+        "totalLift": -32878,
+        "salesPer1kSpend": -0.7664,
+        "gt": 0.00018
+      },
+      {
+        "id": "channel_ooh_spend",
+        "label": "ooh_spend",
+        "beta": -0.001577,
+        "p": 0.7976,
+        "significant": false,
+        "sharePct": 0.8,
+        "vif": 6.04,
+        "totalLift": -16396,
+        "salesPer1kSpend": -1.5765,
+        "gt": null
+      },
+      {
+        "id": "channel_nonbrand_search",
+        "label": "nonbrand_search",
+        "beta": 0.098721,
+        "p": 0.7163,
+        "significant": false,
+        "sharePct": 0.5,
+        "vif": 1.06,
+        "totalLift": 309107,
+        "salesPer1kSpend": 98.721,
+        "gt": 0.25
+      },
+      {
+        "id": "channel_direct_spend",
+        "label": "direct_spend",
+        "beta": -0.000306,
+        "p": 0.9481,
+        "significant": false,
+        "sharePct": 0.1,
+        "vif": 1.05,
+        "totalLift": -10325,
+        "salesPer1kSpend": -0.3057,
+        "gt": 0.00025
+      }
+    ],
+    "baseFactors": [
+      {
+        "label": "seasonality",
+        "beta": 5175.4718,
+        "p": 0,
+        "significant": true,
+        "sharePct": 47.1,
+        "vif": 5.65
+      },
+      {
+        "label": "trend",
+        "beta": 5973.5956,
+        "p": 0,
+        "significant": true,
+        "sharePct": 11.5,
+        "vif": 1.47
+      },
+      {
+        "label": "holiday",
+        "beta": 3752.4007,
+        "p": 0,
+        "significant": true,
+        "sharePct": 11.3,
+        "vif": 1.17
+      },
+      {
+        "label": "price_index",
+        "beta": -5835.2204,
+        "p": 0.2423,
+        "significant": false,
+        "sharePct": 1.6,
+        "vif": 1.13
+      },
+      {
+        "label": "Праздник РФ",
+        "beta": -262.6726,
+        "p": 0.3914,
+        "significant": false,
+        "sharePct": 1.3,
+        "vif": 1.34
+      },
+      {
+        "label": "Крупные распродажи",
+        "beta": -128.7534,
+        "p": 0.6979,
+        "significant": false,
+        "sharePct": 0.6,
+        "vif": 1.34
+      },
+      {
+        "label": "Курс USD/RUB",
+        "beta": -3.1202,
+        "p": 0.7597,
+        "significant": false,
+        "sharePct": 0.5,
+        "vif": 1.46
+      },
+      {
+        "label": "Школьные каникулы",
+        "beta": 24.6886,
+        "p": 0.9226,
+        "significant": false,
+        "sharePct": 0.1,
+        "vif": 1.28
+      }
+    ],
+    "chart": {
+      "dates": [
+        "Нед. 1 2021",
+        "Нед. 5 2021",
+        "Нед. 9 2021",
+        "Нед. 13 2021",
+        "Нед. 17 2021",
+        "Нед. 21 2021",
+        "Нед. 25 2021",
+        "Нед. 29 2021",
+        "Нед. 33 2021",
+        "Нед. 37 2021",
+        "Нед. 41 2021",
+        "Нед. 45 2021",
+        "Нед. 49 2021",
+        "Нед. 1 2022",
+        "Нед. 5 2022",
+        "Нед. 9 2022",
+        "Нед. 13 2022",
+        "Нед. 17 2022",
+        "Нед. 21 2022",
+        "Нед. 25 2022",
+        "Нед. 29 2022",
+        "Нед. 33 2022",
+        "Нед. 37 2022",
+        "Нед. 41 2022",
+        "Нед. 45 2022",
+        "Нед. 49 2022",
+        "Нед. 1 2023",
+        "Нед. 5 2023",
+        "Нед. 9 2023",
+        "Нед. 13 2023",
+        "Нед. 17 2023",
+        "Нед. 21 2023",
+        "Нед. 25 2023",
+        "Нед. 29 2023",
+        "Нед. 33 2023",
+        "Нед. 37 2023",
+        "Нед. 41 2023",
+        "Нед. 45 2023",
+        "Нед. 49 2023",
+        "Нед. 1 2024",
+        "Нед. 5 2024",
+        "Нед. 9 2024",
+        "Нед. 13 2024",
+        "Нед. 17 2024",
+        "Нед. 21 2024",
+        "Нед. 25 2024",
+        "Нед. 29 2024",
+        "Нед. 33 2024",
+        "Нед. 37 2024",
+        "Нед. 41 2024",
+        "Нед. 45 2024",
+        "Нед. 49 2024",
+        "Нед. 1 2024",
+        "Нед. 5 2025",
+        "Нед. 9 2025",
+        "Нед. 13 2025",
+        "Нед. 17 2025",
+        "Нед. 21 2025",
+        "Нед. 25 2025",
+        "Нед. 29 2025",
+        "Нед. 33 2025",
+        "Нед. 37 2025",
+        "Нед. 41 2025",
+        "Нед. 45 2025",
+        "Нед. 49 2025",
+        "Нед. 52 2025"
+      ],
+      "actual": [
+        47678,
+        49529,
+        46110,
+        45438,
+        50622,
+        52374,
+        47699,
+        45927,
+        40526,
+        45329,
+        36947,
+        37439,
+        42115,
+        50534,
+        49622,
+        43895,
+        52044,
+        49881,
+        50722,
+        43599,
+        43390,
+        44451,
+        42377,
+        40311,
+        43462,
+        43636,
+        48690,
+        45875,
+        49230,
+        53501,
+        49194,
+        50269,
+        46581,
+        48887,
+        43059,
+        35459,
+        42120,
+        42836,
+        44038,
+        48047,
+        51065,
+        50817,
+        48122,
+        52169,
+        48869,
+        49667,
+        43914,
+        41551,
+        42017,
+        43361,
+        43790,
+        43227,
+        50386,
+        51788,
+        52366,
+        52264,
+        50423,
+        56133,
+        49508,
+        45951,
+        44284,
+        42388,
+        42446,
+        40831,
+        45513,
+        53431
+      ],
+      "fitted": [
+        48481.7,
+        48914.9,
+        48627,
+        48352,
+        49817,
+        50788.9,
+        46365.6,
+        42186.8,
+        41917,
+        42081,
+        40639.7,
+        39426.4,
+        43429.9,
+        50973,
+        47763.6,
+        47725.4,
+        50681.9,
+        52260.3,
+        49384.8,
+        45238.8,
+        44587.6,
+        44776.4,
+        41156.1,
+        39394.9,
+        42148.8,
+        45902.4,
+        49532.4,
+        46327.3,
+        49889.6,
+        53627.6,
+        51387,
+        48299.1,
+        47637.2,
+        47705.7,
+        43092.5,
+        40003.1,
+        41364.9,
+        44324.5,
+        44737.5,
+        48650.3,
+        49430.2,
+        52757,
+        51818.9,
+        49907.5,
+        50657.3,
+        50176,
+        45809.4,
+        41662.8,
+        42792.7,
+        43873.5,
+        42852.9,
+        43282,
+        51060.5,
+        51409.8,
+        50905,
+        50827,
+        52496.1,
+        52642.8,
+        48646.1,
+        45381.6,
+        44787.7,
+        45107.7,
+        42749,
+        41799.4,
+        46097.8,
+        53153.8
+      ],
+      "baseline": [
+        40141.3,
+        38929.8,
+        40688.8,
+        41880.2,
+        41508.2,
+        40473.4,
+        38261.1,
+        35666.8,
+        33427.7,
+        32104.9,
+        32013.3,
+        32935.6,
+        34940.1,
+        40761.3,
+        39547.5,
+        41231.5,
+        42469.7,
+        42137,
+        41134.5,
+        38939,
+        36342.8,
+        34090.9,
+        32765.6,
+        32661.8,
+        33589.2,
+        35596.6,
+        41394.9,
+        40189.9,
+        41928,
+        43126.4,
+        42993.5,
+        41695.7,
+        39468,
+        36857.9,
+        34600.1,
+        33273.6,
+        33170.4,
+        33853.4,
+        36127.1,
+        41955.8,
+        40749,
+        42497.5,
+        43699,
+        43579.1,
+        42284.9,
+        40079.7,
+        37487.3,
+        35242.2,
+        33912.2,
+        33800.5,
+        34464.6,
+        36709.6,
+        42403.8,
+        41345.6,
+        42998.1,
+        44346.8,
+        44233.6,
+        42938,
+        40727.2,
+        38139.2,
+        35894,
+        34555.4,
+        34466.9,
+        35141.7,
+        37414.3,
+        42866.9
+      ]
+    },
+    "vsExpected": {
+      "r2": {
+        "target": ">0.85",
+        "actual": 0.867,
+        "pass": true
+      },
+      "mapeHoldout": {
+        "target": "8-12%",
+        "actual": 2.676718895027139,
+        "pass": false
+      },
+      "mapeInSample": {
+        "actual": 2.7
+      },
+      "baseShare": {
+        "target": "58-62%",
+        "actual": 82.1,
+        "pass": false
+      },
+      "increment": {
+        "target": "38-42%",
+        "actual": 17.9,
+        "pass": false
+      }
+    },
+    "coefCompare": [
+      {
+        "gt": "TV",
+        "gtBeta": 0.00018,
+        "est": -0.000766
+      },
+      {
+        "gt": "Radio",
+        "gtBeta": 0.0002,
+        "est": null
+      },
+      {
+        "gt": "Direct",
+        "gtBeta": 0.00025,
+        "est": -0.000306
+      },
+      {
+        "gt": "Brand search",
+        "gtBeta": 0.6,
+        "est": 0.67636
+      },
+      {
+        "gt": "Nonbrand",
+        "gtBeta": 0.25,
+        "est": 0.098721
+      },
+      {
+        "gt": "Price",
+        "gtBeta": -9000,
+        "est": -5835.220405
+      }
+    ]
+  }
+}
