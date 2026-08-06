@@ -1,0 +1,32 @@
+name: Update regressors
+
+on:
+  schedule:
+    # 1st day of each month, 06:00 UTC
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run update-regressors
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'data: monthly regressors refresh'
+          title: 'data: monthly regressors refresh'
+          body: |
+            Автоматическое обновление `public/data/regressors.json`
+            (курс USD/RUB, Brent, ключевая ставка, ИПЦ).
+          branch: chore/update-regressors
+          delete-branch: true
