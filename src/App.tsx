@@ -251,6 +251,7 @@ export default function App() {
   }
 
   function applyPreset(kind: 'channels_only' | 'basic' | 'full' | 'recommended') {
+    if (!payload) return
     const macroIds = payload.meta.map((m) => m.id)
     const channelIds = adSeries.map((s) => s.id)
     const compactMacro = macroIds.filter(
