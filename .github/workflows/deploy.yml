@@ -10,9 +10,10 @@ permissions:
   pages: write
   id-token: write
 
+# Do not cancel an in-flight Pages deploy — that leaves Pages stuck / "Deployment cancelled".
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -23,6 +24,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
@@ -38,3 +41,6 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # ms — wait longer while Pages sits in deployment_queued
+          timeout: '900000'
